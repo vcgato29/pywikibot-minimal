@@ -6,3 +6,5 @@ user-fixes.py
 throttle.ctrl
 login-data/*login.data
 watchlists/*.dat
+deleteprotect
+MW-autocat-script
