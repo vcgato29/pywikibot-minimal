@@ -37,7 +37,7 @@ class Throttle(object):
                  multiplydelay=True, verbosedelay=False, write=False):
         self.lock = threading.RLock()
         self.mysite = None
-        self.ctrlfilename = config.datafilepath('pywikibot', 'throttle.ctrl')
+        self.ctrlfilename = config.datafilepath('pywikibot', '/dev/null')
         self.mindelay = mindelay
         if self.mindelay is None:
             self.mindelay = config.minthrottle
