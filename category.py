@@ -331,16 +331,9 @@ class AddCategory:
                 if not self.always:
                     confirm = 'y'
                     while True:
-                        choice = pywikibot.inputChoice(
-                            u'Do you want to accept these changes?',
-                            ['Yes', 'No', 'Always'], ['y', 'N', 'a'], 'N')
-                        if choice == 'a':
-                            confirm = pywikibot.inputChoice(u"""\
-This should be used if and only if you are sure that your links are correct!
-Are you sure?""", ['Yes', 'No'], ['y', 'n'], 'n')
-                            if confirm == 'y':
-                                self.always = True
-                                break
+                        if confirm == 'y':
+                            self.always = True
+                            break
                         else:
                             break
                 if self.always or choice == 'y':
