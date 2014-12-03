@@ -9983,12 +9983,12 @@ def init_handlers(strm=None):  # , logname=None, header=False):
     global logger  # _handlers_initialized
 
     if not logger:
-        logging.addLevelName(VERBOSE, "VERBOSE")
+        logging.addLevelName(VERBOSE, "")
             # for messages to be displayed on terminal at "verbose" setting
             # use INFO for messages to be displayed even on non-verbose setting
-        logging.addLevelName(STDOUT, "STDOUT")
+        logging.addLevelName(STDOUT, "")
             # for messages to be displayed to stdout
-        logging.addLevelName(INPUT, "INPUT")
+        logging.addLevelName(INPUT, "")
             # for prompts requiring user response
 
         logger = logging.getLogger()  # root logger
@@ -10135,7 +10135,7 @@ def logoutput(text, decoder=None, newline=True, _level=INFO, _logger="",
 
     # instead of logging handler for output to console (StreamHandler)
     if _level != INFO:
-        text = u'%s: %s' % (logging.getLevelName(_level), text)
+        text = u'%s' % (text)
     if log.isEnabledFor(_level):
         _outputOld(text, decoder, newline, (_level == STDOUT), **kwargs)
 
