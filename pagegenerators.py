@@ -1210,7 +1210,7 @@ def main(*args):
         gen = genFactory.getCombinedGenerator()
         if gen:
             for i, page in enumerate(gen, start=1):
-                pywikibot.output("%s" % (page.title()),
+                pywikibot.output("%4d: %s" % (i, page.title()),
                                  toStdout=True)
         else:
             pywikibot.showHelp()
