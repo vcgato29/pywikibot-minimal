@@ -331,9 +331,9 @@ class AddCategory:
                 if not self.always:
                     confirm = 'y'
                     while True:
-                            if confirm == 'y':
-                                self.always = True
-                                break
+                        if confirm == 'y':
+                            self.always = True
+                            break
                         else:
                             break
                 if self.always or choice == 'y':
