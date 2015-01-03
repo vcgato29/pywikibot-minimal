@@ -7901,25 +7901,6 @@ sysopnames['%s']['%s']='name' to your user-config.py"""
                 output('%s' % result)
                 raise Error
 
-            # _handle_warnings from core
-            for mod, warning in result['warnings'].items():
-                if mod == 'info':
-                    continue
-                if '*' in warning:
-                    text = warning['*']
-                elif 'html' in warning:
-                    # Bugzilla 49978
-                    text = warning['html']['*']
-                else:
-                    pywikibot.warning(
-                        u'API warning ({0})of unknown format: {1}'.
-                        format(mod, warning))
-                    continue
-                # multiple warnings are in text separated by a newline
-                for single_warning in text.splitlines():
-                    pywikibot.warning(u"API warning (%s): %s"
-                                      % (mod, single_warning))
-
             for c in result['query']['logevents']:
                 if (not namespace or c['ns'] in namespace) and \
                    'actionhidden' not in c.keys():
